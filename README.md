@@ -1,49 +1,105 @@
-# Sistema Escolar — Cadastro de Alunos
+# ❀ Sistema Escolar — Gestão de Professores ❀
 
-Cadastro de alunos com listagem, cadastro e exclusão, feito em React + Vite consumindo uma API simulada com json-server.
+> ✦ *Projeto desenvolvido para a disciplina de Programação para Internet.*
 
-Projeto da disciplina de Programação para Internet — IFRN Campus Pau dos Ferros.
+---
 
-## Pré-requisitos
+## ✽ Informações Acadêmicas
 
-- [Node.js](https://nodejs.org/) instalado (você já deve ter, mas confira com `node -v` no terminal).
+* **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN)  
+* **Curso:** Técnico Integrado em Informática — 3º Ano  
+* **Aluna:** Vitória Cristina  
+* **Repositório:** [github.com/Vitoria-Cristina7/sistema-escolar](https://github.com/Vitoria-Cristina7/sistema-escolar)  
 
-## Como baixar o projeto
+---
 
-1. Baixe o projeto pelo GitHub: **https://github.com/JefersonQueiroga/sistema-escolar**
-   - Pelo navegador: entre no link, clique em **Code > Download ZIP** e extraia a pasta.
-   - Ou, se tiver o Git instalado, rode no terminal (PowerShell):
-     ```powershell
-     git clone https://github.com/JefersonQueiroga/sistema-escolar.git
-     ```
-2. Abra a pasta do projeto no VS Code (ou no terminal, navegue até ela com `cd`).
+## ❁ Sobre o Projeto
 
-## Como instalar as dependências
+O **Sistema Escolar** é uma aplicação web interativa desenvolvida em React com Vite. O objetivo desta atividade foi expandir a estrutura do sistema criando o módulo de cadastro e gestão (**CRUD**) de **Professores**, integrando com o **JSON Server** através de requisições HTTP via Axios.
 
-No terminal, dentro da pasta do projeto, rode:
+---
 
-```powershell
-npm install
-```
+## ✦ Funcionalidades
 
-## Como rodar o projeto
+✧ **Listagem de Professores:** Exibição dinâmica dos professores cadastrados na API.  
+✧ **Cadastro de Professores:** Formulário para inserção de novos professores no banco de dados.  
+✧ **Remoção de Professores:** Exclusão individual de registros direto da listagem.  
+✧ **Navegação SPA:** Roteamento entre páginas sem recarregar a tela com React Router Dom.  
 
-Este projeto precisa de **dois terminais abertos ao mesmo tempo** — um para a API simulada e outro para a aplicação React.
+---
 
-**Terminal 1 — API simulada (json-server):**
-```powershell
-npx json-server --watch db.json --port 3000
-```
+## ✽ Estrutura dos Dados
 
-**Terminal 2 — aplicação React (Vite):**
-```powershell
-npm run dev
-```
+Cada professor cadastrado no arquivo `db.json` possui a seguinte estrutura:
 
-Depois, abra no navegador o endereço mostrado no terminal (geralmente `http://localhost:5173`).
+| Campo | Tipo | Exemplo |
+| :--- | :--- | :--- |
+| `id` | Número (automático) | `1` |
+| `nome` | Texto | `Carlos Oliveira` |
+| `email` | E-mail | `carlos@escola.com` |
+| `cpf` | Texto | `987.654.321-00` |
+| `disciplina` | Texto | `Programação para Internet` |
+| `data_admissao` | Data | `2022-03-01` |
 
-> Se aparecer uma mensagem de erro de conexão na tela, confira se o Terminal 1 (json-server) ainda está rodando.
+---
 
-## Screenshot
+## ❁ Estrutura de Arquivos Criados & Atualizados
 
-_Adicione aqui uma captura de tela do projeto em funcionamento._
+    src/
+     ├─ services/
+     │   ├─ alunoService.js
+     │   └─ professorService.js ─── ✿ (Novo serviço HTTP)
+     │
+     ├─ components/
+     │   ├─ BarraNavegacao.jsx ──── ✿ (Atualizada com novas rotas)
+     │   ├─ CampoTexto.jsx
+     │   ├─ CardProfessor.jsx ───── ✿ (Card de exibição do professor)
+     │   ├─ FormularioProfessor.jsx ✿ (Formulário de cadastro)
+     │   └─ ListaProfessores.jsx ── ✿ (Renderiza a lista de cards)
+     │
+     ├─ pages/
+     │   ├─ PaginaInicial.jsx
+     │   ├─ PaginalistagemProfessores.jsx ── ✿ (Página de listagem)
+     │   └─ PaginaCadastroProfessor.jsx ─── ✿ (Página de formulário)
+     │
+     ├─ App.jsx ─────────────────── ✿ (Rotas e estados globais)
+     └─ db.json ──────────────────── ✿ (Banco de dados simulado)
+
+---
+
+## ✦ Tecnologias Utilizadas
+
+* ❀ **React + Vite** (Biblioteca para interface web)
+* ❀ **React Router Dom** (Gerenciamento de rotas)
+* ❀ **Axios** (Cliente HTTP para integração com a API)
+* ❀ **JSON Server** (API Rest simulada)
+* ❀ **CSS3** (Estilização dos componentes)
+
+---
+
+## ✽ Como Executar o Projeto
+
+1. **Clone o repositório:**
+    git clone [https://github.com/Vitoria-Cristina7/sistema-escolar.git](https://github.com/Vitoria-Cristina7/sistema-escolar.git)
+
+2. **Acesse a pasta do projeto e instale as dependências:**
+    cd sistema-escolar
+    npm install
+
+3. **Inicie a API simulada (JSON Server) em um terminal:**
+    npx json-server --watch db.json --port 3000
+
+4. **Inicie o projeto em outro terminal:**
+    npm run dev
+
+5. **Acesse no navegador:**  
+   Abra o endereço gerado no terminal (geralmente `http://localhost:5173`).
+
+---
+
+<div align="center">
+
+✿ **Desenvolvido por Vitória Cristina** ✿  
+*Técnico Integrado em Informática — IFRN*
+
+</div>
